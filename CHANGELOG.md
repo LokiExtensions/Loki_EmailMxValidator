@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.1] - 15 October 2025
-### Added
+## [1.0.1] - 15 October 2025
+### Fixed
+- Copy generic CI/CD files
+- Adding all files to git via Yireo Command
 - Initial release
