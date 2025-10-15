@@ -1,0 +1,22 @@
+{
+    "name": "loki/magento2-email-mx-validator",
+    "version": "1.0.0",
+    "description": "Add-on to Loki Components to allow the MX record of an email to be validated",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "^103.0",
+        "spatie/dns": "^2.0",
+        "loki/magento2-components": "^2.0"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Loki\\EmailMxValidator\\": ""
+        }
+    }
+}

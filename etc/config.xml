@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <loki_components>
+            <validators>
+                <enable_mx_validation_for_email>1</enable_mx_validation_for_email>
+            </validators>
+        </loki_components>
+    </default>
+</config>
