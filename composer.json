@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Add-on to Loki Components to allow the MX record of an email to be validated",
     "type": "magento2-module",
+    "keywords": [
+        "loki-components"
+    ],
     "require": {
         "loki/magento2-components": "^2.0",
         "magento/framework": "^103.0",
