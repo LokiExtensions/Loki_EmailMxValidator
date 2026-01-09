@@ -28,7 +28,7 @@ class EmailValidatorTest extends TestCase
     {
         $validator = ObjectManager::getInstance()->get(EmailValidator::class);
         $actualResult = $validator->validate($email);
-        if (true === $actualResult) {
+        if (true === $expectedResult) {
             $this->assertTrue($actualResult);
             return;
         }
