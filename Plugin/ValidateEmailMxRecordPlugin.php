@@ -34,6 +34,12 @@ class ValidateEmailMxRecordPlugin
     private function checkMxRecord(string $email): bool|array
     {
         $parts = explode('@', $email);
+        if (count($parts) < 2) {
+            $message = (string)__('E-mail "%s" is not valid');
+
+            return [sprintf($message, $email)];
+        }
+
         $domain = $parts[1];
         $mxRecords = $this->dns
             ->setRetries($this->retries)
