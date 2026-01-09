@@ -1,0 +1,9 @@
+includes:
+  - vendor/bitexpert/phpstan-magento/extension.neon
+
+parameters:
+  level: 1
+  bootstrapFiles:
+    - vendor/autoload.php
+  autoload_directories:
+    - vendor
