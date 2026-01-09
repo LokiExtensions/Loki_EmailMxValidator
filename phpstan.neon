@@ -2,5 +2,5 @@ parameters:
   level: 1
   bootstrapFiles:
     - vendor/autoload.php
-  autoload_directories:
-    - vendor
+    - dev/tests/integration/framework/autoload.php
+
