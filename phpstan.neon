@@ -1,6 +1,0 @@
-parameters:
-  level: 1
-  bootstrapFiles:
-    - vendor/autoload.php
-    - dev/tests/integration/framework/autoload.php
-
