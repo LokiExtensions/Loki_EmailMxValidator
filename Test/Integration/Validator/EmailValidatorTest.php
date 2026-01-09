@@ -14,6 +14,7 @@ class EmailValidatorTest extends TestCase
     public function testWithNoValue(): void
     {
         $validator = ObjectManager::getInstance()->get(EmailValidator::class);
+        $actualResult = $validator->validate(null);
         $error = array_pop($actualResult);
         $this->assertStringContainsString('is not valid', $error, var_export($actualResult, true));
     }
