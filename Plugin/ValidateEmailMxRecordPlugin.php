@@ -21,7 +21,7 @@ class ValidateEmailMxRecordPlugin
         bool|array $result,
         mixed $value,
     ): bool|array {
-        if ($this->config->enableMxValidationForEmail()) {
+        if ($this->config->enableMxValidationForEmail() && !empty($value)) {
             $result = $this->checkMxRecord((string)$value);
             if (is_array($result)) {
                 return $result;
