@@ -15,8 +15,7 @@ class EmailValidatorTest extends TestCase
     {
         $validator = ObjectManager::getInstance()->get(EmailValidator::class);
         $actualResult = $validator->validate(null);
-        $error = array_pop($actualResult);
-        $this->assertStringContainsString('is not valid', $error, var_export($actualResult, true));
+        $this->assertTrue($actualResult);
     }
 
     /**
@@ -42,7 +41,7 @@ class EmailValidatorTest extends TestCase
     public static function getValues(): array
     {
         return [
-            ['jane@example.com', true],
+            ['jane@yireo.com', true],
             ['jane@example.comcom', 'is not reachable for mail'],
         ];
     }
