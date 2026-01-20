@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 20 January 2026
+### Fixed
+- Add new GitHub Action workflows
+- Check for invalid email without domain part
+
 ## [1.0.1] - 15 October 2025
 ### Fixed
 - Copy generic CI/CD files
