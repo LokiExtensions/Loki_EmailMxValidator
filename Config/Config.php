@@ -4,6 +4,7 @@ namespace Loki\EmailMxValidator\Config;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
+use Magento\Store\Model\ScopeInterface;
 
 class Config implements ArgumentInterface
 {
@@ -14,6 +15,9 @@ class Config implements ArgumentInterface
 
     public function enableMxValidationForEmail(): bool
     {
-        return (bool)$this->scopeConfig->getValue('loki_components/validators/enable_mx_validation_for_email');
+        return (bool)$this->scopeConfig->getValue(
+            'loki_components/validators/enable_mx_validation_for_email',
+            ScopeInterface::SCOPE_STORE
+        );
     }
 }
