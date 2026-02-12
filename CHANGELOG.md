@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 12 February 2026
+### Fixed
+- Allow PHP Config to read from current store level
+
 ## [1.0.1] - 20 January 2026
 ### Fixed
 - Add new GitHub Action workflows
