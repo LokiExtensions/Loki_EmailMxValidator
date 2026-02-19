@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 19 February 2026
+### Fixed
+- Fix config integration test
+
 ## [1.0.2] - 12 February 2026
 ### Fixed
 - Allow PHP Config to read from current store level
