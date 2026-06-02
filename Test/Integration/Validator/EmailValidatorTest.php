@@ -24,7 +24,7 @@ class EmailValidatorTest extends TestCase
      * @return void
      * @dataProvider getValues
      */
-    #[Config('loki_components/validators/enable_mx_validation_for_email', true)]
+    #[Config('loki_components/validators/enable_mx_validation_for_email', true, 'store', 'default')]
     public function testWithVariousValues(string $email, true|string $expectedResult): void
     {
         $validator = ObjectManager::getInstance()->get(EmailValidator::class);
@@ -34,6 +34,7 @@ class EmailValidatorTest extends TestCase
             return;
         }
 
+        $this->assertIsArray($actualResult, var_export($actualResult, true));
         $error = array_pop($actualResult);
         $this->assertStringContainsString($expectedResult, $error, var_export($actualResult, true));
     }

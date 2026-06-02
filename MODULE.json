@@ -1,6 +1,9 @@
 {
     "sequence": [
-        "Loki_Components"
+        "Loki_Components",
+        "Magento_Backend",
+        "Magento_Config",
+        "Magento_Store"
     ],
     "modules": [
         "Loki_Base",
