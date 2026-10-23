@@ -21,11 +21,12 @@ class ValidateEmailMxRecordPlugin
         bool|array $result,
         mixed $value,
     ): bool|array {
+        if (true !== $result) {
+            return $result;
+        }
+
         if ($this->config->enableMxValidationForEmail() && !empty($value)) {
-            $result = $this->checkMxRecord((string)$value);
-            if (is_array($result)) {
-                return $result;
-            }
+            return $this->checkMxRecord((string)$value);
         }
 
         return $result;
@@ -33,14 +34,14 @@ class ValidateEmailMxRecordPlugin
 
     private function checkMxRecord(string $email): bool|array
     {
-        $parts = explode('@', $email);
-        if (count($parts) < 2) {
+        $parts = explode('@', trim($email));
+        $domain = count($parts) >= 2 ? trim((string)end($parts)) : '';
+        if ($domain === '') {
             $message = (string)__('E-mail "%s" is not valid');
 
             return [sprintf($message, $email)];
         }
 
-        $domain = $parts[1];
         $mxRecords = $this->dns
             ->setRetries($this->retries)
             ->setTimeout($this->timeout)
