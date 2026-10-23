@@ -27,9 +27,9 @@
         }
     ],
     "tests": {
-        "unit": 0,
-        "integration": 4,
-        "functional": 0
+        "unit": 10,
+        "integration": 17,
+        "functional": 6
     },
     "module_name": "Loki_EmailMxValidator",
     "composer_name": "loki/magento2-email-mx-validator",

@@ -9,6 +9,12 @@ use Loki\EmailMxValidator\Config\Config;
 
 class ConfigTest extends TestCase
 {
+    public function testMxValidationForEmailEnabledByDefault()
+    {
+        $config = ObjectManager::getInstance()->get(Config::class);
+        $this->assertTrue($config->enableMxValidationForEmail());
+    }
+
     #[ConfigFixture('loki_components/general/debug', 1, 'store', 'default')]
     #[ConfigFixture('loki_components/validators/enable_mx_validation_for_email', 1, 'store', 'default')]
     public function testMxValidationForEmailEnabled()

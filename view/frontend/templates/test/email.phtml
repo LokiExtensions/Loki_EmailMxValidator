@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+
+use Loki\Components\Component\ComponentViewModelInterface;
+use Loki\Components\Util\Block\BlockRenderer;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var ComponentViewModelInterface $viewModel */
+/** @var BlockRenderer $blockRenderer */
+
+$fieldId = $viewModel->getElementId() . '-field';
+?>
+<div class="loki-email-mx-validator-test">
+    <label for="<?= $escaper->escapeHtmlAttr($fieldId) ?>"><?= $escaper->escapeHtml(__('Email')) ?></label>
+    <input
+        type="text"
+        name="email"
+        id="<?= $escaper->escapeHtmlAttr($fieldId) ?>"
+        value="<?= $escaper->escapeHtmlAttr((string)$viewModel->getValue()) ?>"
+        :value="value"
+        @input="setValue"
+        @change="post"
+    />
+
+    <?= /* @noEscape */ $blockRenderer->html(
+        $block,
+        'loki-components.utils.local-messages',
+        ['dom_id' => $viewModel->getElementId() . '-messages']
+    ) ?>
+</div>
