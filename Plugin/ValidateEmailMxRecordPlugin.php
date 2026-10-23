@@ -34,8 +34,8 @@ class ValidateEmailMxRecordPlugin
 
     private function checkMxRecord(string $email): bool|array
     {
-        $parts = explode('@', trim($email));
-        $domain = count($parts) >= 2 ? trim((string)end($parts)) : '';
+        $parts = explode('@', trim($email, " \n\r\t\v\0"));
+        $domain = count($parts) >= 2 ? trim((string)end($parts), " \n\r\t\v\0") : '';
         if ($domain === '') {
             $message = (string)__('E-mail "%s" is not valid');
 
