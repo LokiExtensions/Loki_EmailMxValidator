@@ -3,7 +3,7 @@
 namespace Loki\EmailMxValidator\Component;
 
 use Loki\Components\Component\ComponentRepository;
-use Magento\Framework\Session\SessionManagerInterface;
+use Magento\Framework\Session\Generic;
 
 /**
  * Repository of the test component used by the functional tests (layout handle loki_email_mx_validator_test)
@@ -13,7 +13,7 @@ class TestEmailRepository extends ComponentRepository
     private const SESSION_KEY = 'loki_email_mx_validator_test_email';
 
     public function __construct(
-        private readonly SessionManagerInterface $session
+        private readonly Generic $session
     ) {
     }
 
