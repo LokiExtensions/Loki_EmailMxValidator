@@ -33,15 +33,15 @@ for (const theme of THEMES) {
                 const expectedError = 'Domain "example.invalid" is not reachable for mail';
                 await submitEmail(page, 'jane@example.invalid');
 
-                expect(await getComponentMessages(page)).toContainEqual({type: 'error', text: expectedError});
+                await expect.poll(() => getComponentMessages(page)).toContainEqual({type: 'error', text: expectedError});
                 await expect(page.locator('#' + MESSAGES_ID)).toContainText(expectedError);
             });
 
             test('keeps the error of the core email validator', async ({page}) => {
                 await submitEmail(page, 'foo bar@yireo.com');
 
+                await expect.poll(() => getComponentMessages(page)).toContainEqual({type: 'error', text: 'Invalid email address'});
                 const messages = await getComponentMessages(page);
-                expect(messages).toContainEqual({type: 'error', text: 'Invalid email address'});
                 expect(messages.map(message => message.text).join()).not.toContain('not reachable for mail');
                 await expect(page.locator('#' + MESSAGES_ID)).toContainText('Invalid email address');
             });
@@ -72,7 +72,7 @@ for (const theme of THEMES) {
             test('still shows the error of the core email validator', async ({page}) => {
                 await submitEmail(page, 'foo bar@yireo.com');
 
-                expect(await getComponentMessages(page)).toContainEqual({type: 'error', text: 'Invalid email address'});
+                await expect.poll(() => getComponentMessages(page)).toContainEqual({type: 'error', text: 'Invalid email address'});
             });
         });
     });
