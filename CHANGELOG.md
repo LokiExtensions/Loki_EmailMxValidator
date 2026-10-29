@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.5] - 29 October 2026
+### Fixed
+- Poll component messages to avoid race after AJAX update
+- Pass explicit characters to trim() for PHP 8.6 compatibility
+- Respect core email validator errors and skip MX lookup for empty domain
+
 ## [1.0.4] - 02 June 2026
 ### Fixed
 - Update composer requirements
