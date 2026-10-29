@@ -11,14 +11,18 @@
         "Loki_CssUtils",
         "Magento_Backend",
         "Magento_Config",
+        "Magento_Csp",
         "Magento_Customer",
         "Magento_Directory",
+        "Magento_Eav",
         "Magento_Quote",
         "Magento_Store",
         "Magento_Theme",
         "Yireo_CspUtilities"
     ],
-    "components": [],
+    "components": [
+        "loki-email-mx-validator.test.email"
+    ],
     "config": [
         {
             "path": "loki_components/validators/enable_mx_validation_for_email",
